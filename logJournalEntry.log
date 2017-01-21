@@ -1,4 +1,5 @@
 2017-01-21 11:44:06.792 [AWT-EventQueue-0] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+test per commit
 2017-01-21 11:44:06.948 [AWT-EventQueue-0] DEBUG org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
 2017-01-21 11:44:06.948 [AWT-EventQueue-0] DEBUG org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
 2017-01-21 11:44:06.949 [AWT-EventQueue-0] DEBUG org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
