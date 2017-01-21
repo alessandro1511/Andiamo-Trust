@@ -16,7 +16,7 @@
 2017-01-21 11:44:08.990 [AWT-EventQueue-0] DEBUG Graphics.Login - Login ok
 
 
-ciao ciao
+ciao ciao bene
 
 
 2017-01-21 11:44:21.223 [AWT-EventQueue-0] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
