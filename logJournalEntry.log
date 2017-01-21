@@ -14,6 +14,9 @@
 2017-01-21 11:44:07.693 [AWT-EventQueue-0] DEBUG org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1352518021 to pool.
 2017-01-21 11:44:07.695 [AWT-EventQueue-0] INFO  Graphics.Login - Utente errato
 2017-01-21 11:44:08.990 [AWT-EventQueue-0] DEBUG Graphics.Login - Login ok
+
+ciao ciao
+
 2017-01-21 11:44:21.223 [AWT-EventQueue-0] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
 2017-01-21 11:44:21.223 [AWT-EventQueue-0] DEBUG org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1352518021 from pool.
 2017-01-21 11:44:21.224 [AWT-EventQueue-0] DEBUG org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@509dc985]
