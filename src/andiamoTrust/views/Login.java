@@ -1,31 +1,29 @@
 package andiamoTrust.views;
 
 import java.awt.BorderLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
 
-public class Login extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+public class Login extends Master {
 
 	private static final long serialVersionUID = 6694992819726401761L;
 	private JPanel frameLogin;
-	private JTextField textField;
+	private JTextField textUsername;
 	private JPasswordField passwordField;
 
-	/**
-	 * Create the frame.
-	 */
 	public Login() {
+		getLogger().info("initialization login");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 700, 500);
+		setBounds(0, 0, 706, 791);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
@@ -57,11 +55,11 @@ public class Login extends JFrame {
 		lblUsername.setFont(new Font("Calibri", Font.PLAIN, 20));
 		pnlLogin.add(lblUsername);
 		
-		textField = new JTextField();
-		textField.setBounds(141, 67, 383, 40);
-		textField.setFont(new Font("Calibri", Font.PLAIN, 20));
-		pnlLogin.add(textField);
-		textField.setColumns(10);
+		textUsername = new JTextField();
+		textUsername.setBounds(141, 67, 383, 40);
+		textUsername.setFont(new Font("Calibri", Font.PLAIN, 20));
+		pnlLogin.add(textUsername);
+		textUsername.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setBounds(141, 123, 383, 20);
@@ -84,13 +82,21 @@ public class Login extends JFrame {
 		btnCancel.setFont(new Font("Calibri", Font.PLAIN, 20));
 		
 		JPanel pnlRetry = new JPanel();
-		pnlRetry.setBounds(137, 119, 406, 320);
+		pnlRetry.setBounds(15, 415, 664, 249);
 		pnlRetry.setBorder(new EmptyBorder(10, 0, 25, 0));
 		frameLogin.add(pnlRetry);
 		pnlRetry.setLayout(null);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(0, 0, 115, 29);
-		pnlRetry.add(btnNewButton_2);
+		JButton btnRetry = new JButton("Ok");
+		btnRetry.setFont(new Font("Calibri", Font.PLAIN, 20));
+		btnRetry.setBounds(268, 165, 150, 40);
+		pnlRetry.add(btnRetry);
+		
+		JLabel lblRetry = new JLabel("The Username or Password are incorrect. Please Retry.");
+		lblRetry.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRetry.setFont(new Font("Calibri", Font.PLAIN, 20));
+		lblRetry.setBounds(0, 94, 664, 20);
+		pnlRetry.add(lblRetry);
+		getLogger().info("initialization login complete");
 	}
 }
