@@ -15,13 +15,13 @@ public abstract class Master extends JFrame {
 	public Master() {
 		logger = LogManager.getLogger(this.getClass());
 	}
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
-					frame.setVisible(true);
+					Login frameLogin = new Login();
+					frameLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
