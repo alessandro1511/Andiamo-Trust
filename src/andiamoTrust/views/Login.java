@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
+import java.awt.Color;
 
 public class Login extends Master {
 
@@ -29,67 +30,69 @@ public class Login extends Master {
 		getLogger().info("initialization login");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 700, 500);
+		setBounds(0, 0, 600, 400);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
 		globalPnlLogin = new JPanel();
+		globalPnlLogin.setBackground(new Color(46, 128, 171));
 		globalPnlLogin.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(globalPnlLogin);
 		globalPnlLogin.setLayout(null);
 		
 		JPanel pnlLogo = new JPanel();
-		pnlLogo.setBounds(15, 0, 664, 85);
+		pnlLogo.setBackground(new Color(46, 128, 171));
+		pnlLogo.setBounds(15, 0, 564, 60);
 		globalPnlLogin.add(pnlLogo);
-		pnlLogo.setLayout(new BorderLayout(0, 0));
+		pnlLogo.setLayout(null);
 		
-		JLabel lblLogin = new JLabel("Login");
+		JLabel lblLogin = new JLabel("LOGIN");
+		lblLogin.setBounds(0, 16, 564, 37);
+		lblLogin.setBackground(new Color(46, 128, 171));
 		pnlLogo.add(lblLogin);
-		lblLogin.setBorder(new EmptyBorder(25, 0, 0, 0));
+		lblLogin.setBorder(new EmptyBorder(0, 0, 0, 0));
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Calibri", Font.PLAIN, 60));
+		lblLogin.setFont(new Font("Calibri", Font.PLAIN, 20));
 		
 		JPanel pnlLogin = new JPanel();
-		pnlLogin.setVisible(true);
-		pnlLogin.setBounds(15, 101, 664, 311);
+		pnlLogin.setBounds(15, 70, 564, 257);
 		globalPnlLogin.add(pnlLogin);
+		pnlLogin.setBackground(new Color(46, 128, 171));
 		pnlLogin.setLayout(null);
+		pnlLogin.setVisible(true);
 		
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setBounds(141, 43, 383, 20);
+		lblUsername.setBounds(85, 16, 383, 20);
 		lblUsername.setFont(new Font("Calibri", Font.PLAIN, 20));
 		pnlLogin.add(lblUsername);
 		
 		textUsername = new JTextField();
-		textUsername.setBounds(141, 67, 383, 40);
+		textUsername.setBounds(85, 40, 383, 40);
 		textUsername.setFont(new Font("Calibri", Font.PLAIN, 20));
 		pnlLogin.add(textUsername);
 		textUsername.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(141, 123, 383, 20);
+		lblPassword.setBounds(85, 96, 383, 20);
 		lblPassword.setFont(new Font("Calibri", Font.PLAIN, 20));
 		pnlLogin.add(lblPassword);
 		
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Calibri", Font.PLAIN, 20));
-		passwordField.setBounds(141, 147, 383, 40);
+		passwordField.setBounds(85, 120, 383, 40);
 		pnlLogin.add(passwordField);
 		
-		JButton btnCancel = new JButton("Cancel");
-		btnCancel.setBounds(374, 243, 150, 40);
-		pnlLogin.add(btnCancel);
-		btnCancel.setFont(new Font("Calibri", Font.PLAIN, 20));
-		
 		JButton btnOk = new JButton("Ok");
-		btnOk.setBounds(141, 243, 150, 40);
+		btnOk.setForeground(Color.WHITE);
+		btnOk.setBackground(new Color(40, 45, 50));
+		btnOk.setBounds(85, 201, 383, 40);
 		pnlLogin.add(btnOk);
 		btnOk.setFont(new Font("Calibri", Font.PLAIN, 20));
 		
 		JPanel pnlRetry = new JPanel();
-		pnlRetry.setBounds(15, 163, 664, 249);
+		pnlRetry.setBackground(new Color(46, 128, 171));
+		pnlRetry.setBounds(15, 70, 564, 257);
 		globalPnlLogin.add(pnlRetry);
-		pnlRetry.setVisible(false);
 		pnlRetry.setVisible(false);
 		pnlRetry.setBorder(new EmptyBorder(10, 0, 25, 0));
 		pnlRetry.setLayout(null);
@@ -97,13 +100,15 @@ public class Login extends Master {
 		JLabel lblRetry = new JLabel("The Username or Password are incorrect.");
 		lblRetry.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRetry.setFont(new Font("Calibri", Font.PLAIN, 20));
-		lblRetry.setBounds(0, 37, 664, 20);
+		lblRetry.setBounds(0, 90, 564, 20);
 		pnlRetry.add(lblRetry);
 		
 		JButton btnRetry = new JButton("Ok, retry");
-		btnRetry.setFont(new Font("Calibri", Font.PLAIN, 20));
-		btnRetry.setBounds(254, 178, 150, 40);
+		btnRetry.setForeground(Color.WHITE);
+		btnRetry.setBackground(new Color(40, 45, 50));
+		btnRetry.setBounds(85, 201, 383, 40);
 		pnlRetry.add(btnRetry);
+		btnRetry.setFont(new Font("Calibri", Font.PLAIN, 20));
 		
 		//Button actions
 		btnOk.addActionListener(new ActionListener() {
@@ -128,12 +133,6 @@ public class Login extends Master {
 				 } catch (Exception e) {
 					 e.printStackTrace();
 				 }
-			}
-		});
-		
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
 			}
 		});
 		
