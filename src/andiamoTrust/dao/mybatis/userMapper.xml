@@ -15,7 +15,7 @@
     </select>
  
     <select id="selectByKeys" parameterType="UserDTO" resultMap="result">
-        SELECT * FROM users WHERE username = #{username} AND password = #{password}
+        SELECT * FROM users WHERE BINARY username = #{username} AND BINARY password = #{password}
     </select>
  
     <insert id="insert" parameterType="UserDTO" useGeneratedKeys="true" keyProperty="username">
