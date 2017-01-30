@@ -2,9 +2,11 @@ package andiamoTrust.views;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
+import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
 
 public class Login extends Master {
 
@@ -29,7 +33,7 @@ public class Login extends Master {
 		getLogger().info("initialization login");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 600, 400);
+		setBounds(0, 0, 600, 500);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
@@ -41,12 +45,12 @@ public class Login extends Master {
 		
 		JPanel pnlLogo = new JPanel();
 		pnlLogo.setBackground(new Color(42, 129, 172));
-		pnlLogo.setBounds(15, 0, 564, 60);
+		pnlLogo.setBounds(15, 16, 564, 155);
 		globalPnlLogin.add(pnlLogo);
-		pnlLogo.setLayout(null);
 		
-		JLabel lblLogin = new JLabel("LOGIN");
-		lblLogin.setBounds(0, 16, 564, 37);
+		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(400, 150, Image.SCALE_SMOOTH));
+		pnlLogo.setLayout(new BorderLayout(0, 0));
+		JLabel lblLogin = new JLabel("", imageIcon, JLabel.CENTER);
 		lblLogin.setBackground(new Color(42, 129, 172));
 		pnlLogo.add(lblLogin);
 		lblLogin.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -54,7 +58,7 @@ public class Login extends Master {
 		lblLogin.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		JPanel pnlLogin = new JPanel();
-		pnlLogin.setBounds(15, 70, 564, 257);
+		pnlLogin.setBounds(15, 187, 564, 257);
 		globalPnlLogin.add(pnlLogin);
 		pnlLogin.setBackground(new Color(42, 129, 172));
 		pnlLogin.setLayout(null);
@@ -90,7 +94,7 @@ public class Login extends Master {
 		
 		JPanel pnlRetry = new JPanel();
 		pnlRetry.setBackground(new Color(42, 129, 172));
-		pnlRetry.setBounds(15, 70, 564, 257);
+		pnlRetry.setBounds(15, 187, 564, 257);
 		globalPnlLogin.add(pnlRetry);
 		pnlRetry.setVisible(false);
 		pnlRetry.setBorder(new EmptyBorder(10, 0, 25, 0));
