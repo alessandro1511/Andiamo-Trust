@@ -50,12 +50,12 @@ public class Login extends Master {
 		
 		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(400, 150, Image.SCALE_SMOOTH));
 		pnlLogo.setLayout(new BorderLayout(0, 0));
-		JLabel lblLogin = new JLabel("", imageIcon, JLabel.CENTER);
-		lblLogin.setBackground(new Color(42, 129, 172));
-		pnlLogo.add(lblLogin);
-		lblLogin.setBorder(new EmptyBorder(0, 0, 0, 0));
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Calibri", Font.BOLD, 20));
+		JLabel lblLogo = new JLabel("", imageIcon, JLabel.CENTER);
+		lblLogo.setBackground(new Color(42, 129, 172));
+		pnlLogo.add(lblLogo);
+		lblLogo.setBorder(new EmptyBorder(0, 0, 0, 0));
+		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogo.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		JPanel pnlLogin = new JPanel();
 		pnlLogin.setBounds(15, 187, 564, 257);
