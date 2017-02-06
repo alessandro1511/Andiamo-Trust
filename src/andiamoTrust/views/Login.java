@@ -1,8 +1,10 @@
 package andiamoTrust.views;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,8 +21,6 @@ import javax.swing.border.EmptyBorder;
 import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
-import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
 
 public class Login extends Master {
 
@@ -31,6 +31,7 @@ public class Login extends Master {
 
 	public Login() {
 		getLogger().info("initialization login");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.ico"));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 600, 500);
@@ -121,10 +122,12 @@ public class Login extends Master {
 					 UserDTO user = new UserDTO();
 					 user.setUsername(textUsername.getText());
 					 user.setPassword(passwordField.getText());
-					 UserDTO userResult = userDAO.selectByKeys(user);
-					 if (userResult != null)
+					 sessionUser = userDAO.selectByKeys(user);
+					 if (sessionUser != null)
 					 {
 						 getLogger().info("user found");
+						 dispose();
+						 Main frameMain = new Main();
 					 }
 					 else
 					 {

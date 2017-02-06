@@ -7,10 +7,13 @@ import javax.swing.JFrame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import andiamoTrust.dao.dto.UserDTO;
+
 public abstract class Master extends JFrame {
 
 	private static final long serialVersionUID = -5543289367824198141L;
 	protected Logger logger;
+	public static UserDTO sessionUser;
 	
 	public Master() {
 		logger = LogManager.getLogger(this.getClass());
@@ -21,7 +24,6 @@ public abstract class Master extends JFrame {
 			public void run() {
 				try {
 					Login frameLogin = new Login();
-					frameLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -31,5 +33,13 @@ public abstract class Master extends JFrame {
 
 	public Logger getLogger(){
 		return logger;
+	}
+
+	public UserDTO getSessionUser() {
+		return sessionUser;
+	}
+
+	public void setSessionUser(UserDTO sessionUser) {
+		this.sessionUser = sessionUser;
 	}
 }
