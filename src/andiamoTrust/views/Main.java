@@ -2,26 +2,30 @@ package andiamoTrust.views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import java.awt.Font;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 
 public class Main extends Master {
 
 	private static final long serialVersionUID = -5136872760546330710L;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	
 	public Main() {
+		getContentPane().setBackground(new Color(21, 58, 76));
 		getLogger().info("initialization main");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.ico"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.png"));
 		setBackground(new Color(42, 129, 172));
 		setFont(new Font("Calibri", Font.PLAIN, 20));
 		setVisible(true);
@@ -32,31 +36,84 @@ public class Main extends Master {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		JPanel pnlInfo = new JPanel();
+		pnlInfo.setBackground(new Color(21, 58, 76));
 		getContentPane().add(pnlInfo, BorderLayout.NORTH);
 		pnlInfo.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblUser = new JLabel("User");
-		lblUser.setText(getSessionUser().getUsername());
-		lblUser.setFont(new Font("Calibri", Font.PLAIN, 20));
-		pnlInfo.add(lblUser, BorderLayout.EAST);
-		
-		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(200, 75, Image.SCALE_SMOOTH));
-		JLabel lblLogo = new JLabel("", imageIcon, JLabel.CENTER);
-		lblLogo.setFont(new Font("Calibri", Font.PLAIN, 20));
-		
+		JLabel lblLogo = new JLabel("Andiamo Youth Coperative Trust");
+		lblLogo.setVerticalAlignment(SwingConstants.CENTER);
+		lblLogo.setForeground(new Color(38, 189, 238));
+		lblLogo.setFont(new Font("Calibri", Font.PLAIN, 30));
 		pnlInfo.add(lblLogo, BorderLayout.WEST);
+		
+		JPanel pnlUser = new JPanel();
+		pnlInfo.add(pnlUser, BorderLayout.EAST);
+		pnlUser.setLayout(new BorderLayout(0, 0));
+		pnlUser.setBackground(new Color(21, 58, 76));
+		
+		JLabel lblUserImg = new JLabel("", new ImageIcon("img/user.png"), SwingConstants.CENTER);
+		lblUserImg.setBorder(new EmptyBorder(10, 0, 10, 20));
+		pnlUser.add(lblUserImg, BorderLayout.EAST);
+		JLabel lblUser = new JLabel(getSessionUser().getUsername());
+		lblUser.setBorder(new EmptyBorder(0, 0, 0, 20));
+		pnlUser.add(lblUser, BorderLayout.WEST);
+		lblUser.setForeground(Color.WHITE);
+		lblUser.setFont(new Font("Calibri", Font.PLAIN, 20));
 		
 		JTabbedPane tabbedPnlMain = new JTabbedPane(JTabbedPane.LEFT);
 		tabbedPnlMain.setFont(new Font("Calibri", Font.PLAIN, 20));
+		tabbedPnlMain.setBackground(new Color(21, 58, 76));
+		tabbedPnlMain.setForeground(Color.WHITE);
+		tabbedPnlMain.setBorder(new EmptyBorder(0, 0, 0, 0));
 		getContentPane().add(tabbedPnlMain, BorderLayout.CENTER);
 		
 		JPanel pnlWelcome = new JPanel();
+		pnlWelcome.setBorder(new EmptyBorder(0, 0, 0, 0));
 		pnlWelcome.setBackground(new Color(42, 129, 172));
 		tabbedPnlMain.addTab("Welcome", null, pnlWelcome, null);
+		pnlWelcome.setLayout(null);
+		
+		JLabel lblTestoDiProva = new JLabel("Testo di prova");
+		lblTestoDiProva.setFont(new Font("Calibri", Font.PLAIN, 20));
+		lblTestoDiProva.setBounds(112, 112, 221, 20);
+		pnlWelcome.add(lblTestoDiProva);
+		
+		textField = new JTextField();
+		textField.setBounds(112, 148, 243, 34);
+		pnlWelcome.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(112, 275, 243, 40);
+		pnlWelcome.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblTestTest = new JLabel("Test 2 test");
+		lblTestTest.setFont(new Font("Calibri", Font.PLAIN, 20));
+		lblTestTest.setBounds(112, 239, 131, 20);
+		pnlWelcome.add(lblTestTest);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(112, 390, 243, 34);
+		pnlWelcome.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblTestoNumero = new JLabel("Testo numero 3");
+		lblTestoNumero.setBounds(112, 359, 166, 20);
+		pnlWelcome.add(lblTestoNumero);
+		
+		JLabel lblNewTestOlungolabel = new JLabel("New Test olungolabel");
+		lblNewTestOlungolabel.setBounds(634, 111, 166, 20);
+		pnlWelcome.add(lblNewTestOlungolabel);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(634, 155, 279, 160);
+		pnlWelcome.add(textArea);
 		
 		JPanel pnlJournalEntry = new JPanel();
 		pnlJournalEntry.setBackground(new Color(42, 129, 172));
 		tabbedPnlMain.addTab("Journal Entry", null, pnlJournalEntry, null);
+		pnlJournalEntry.setLayout(null);
 		
 		JPanel pnlSettings = new JPanel();
 		pnlSettings.setBackground(new Color(42, 129, 172));

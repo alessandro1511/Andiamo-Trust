@@ -31,7 +31,7 @@ public class Login extends Master {
 
 	public Login() {
 		getLogger().info("initialization login");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.ico"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.png"));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 600, 500);
@@ -40,26 +40,24 @@ public class Login extends Master {
 		
 		globalPnlLogin = new JPanel();
 		globalPnlLogin.setBackground(new Color(42, 129, 172));
-		globalPnlLogin.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(globalPnlLogin);
 		globalPnlLogin.setLayout(null);
 		
 		JPanel pnlLogo = new JPanel();
 		pnlLogo.setBackground(new Color(42, 129, 172));
-		pnlLogo.setBounds(15, 16, 564, 155);
+		pnlLogo.setBounds(0, 0, 594, 150);
 		globalPnlLogin.add(pnlLogo);
 		
-		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(400, 150, Image.SCALE_SMOOTH));
+		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(300, 110, Image.SCALE_SMOOTH));
 		pnlLogo.setLayout(new BorderLayout(0, 0));
 		JLabel lblLogo = new JLabel("", imageIcon, JLabel.CENTER);
-		lblLogo.setBackground(new Color(42, 129, 172));
 		pnlLogo.add(lblLogo);
 		lblLogo.setBorder(new EmptyBorder(0, 0, 0, 0));
 		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogo.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		JPanel pnlLogin = new JPanel();
-		pnlLogin.setBounds(15, 187, 564, 257);
+		pnlLogin.setBounds(15, 150, 564, 257);
 		globalPnlLogin.add(pnlLogin);
 		pnlLogin.setBackground(new Color(42, 129, 172));
 		pnlLogin.setLayout(null);
@@ -95,7 +93,7 @@ public class Login extends Master {
 		
 		JPanel pnlRetry = new JPanel();
 		pnlRetry.setBackground(new Color(42, 129, 172));
-		pnlRetry.setBounds(15, 187, 564, 257);
+		pnlRetry.setBounds(15, 150, 564, 257);
 		globalPnlLogin.add(pnlRetry);
 		pnlRetry.setVisible(false);
 		pnlRetry.setBorder(new EmptyBorder(10, 0, 25, 0));
