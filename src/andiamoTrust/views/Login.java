@@ -23,7 +23,7 @@ import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
 
-public class Login extends Master {
+public class Login extends LauncherViews {
 
 	private static final long serialVersionUID = 6694992819726401761L;
 	private JPanel globalPnlLogin;
@@ -43,6 +43,7 @@ public class Login extends Master {
 	 */
 	public void initialize() {
 		getLogger().info("initialization login");
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct_ico.png"));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

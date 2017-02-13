@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.apache.logging.log4j.LogManager;
 
-public class Main extends Master {
+public class Main extends LauncherViews {
 
 	private static final long serialVersionUID = -5136872760546330710L;
 	private JTextField textField;
