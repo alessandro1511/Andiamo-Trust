@@ -23,7 +23,7 @@ import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
 
-public class Login extends MasterPage {
+public class Login extends Master {
 
 	private static final long serialVersionUID = 6694992819726401761L;
 	private JPanel globalPnlLogin;

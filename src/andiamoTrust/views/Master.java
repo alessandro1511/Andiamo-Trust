@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 
 import andiamoTrust.dao.dto.UserDTO;
 
-public class MasterPage extends JFrame {
+public class Master extends JFrame {
 	
 	private static final long serialVersionUID = 6742096473341635479L;
 	protected static Logger logger;
@@ -34,7 +34,7 @@ public class MasterPage extends JFrame {
 			public void run() {
 				try {
 					logger = LogManager.getLogger(this.getClass());
-					MasterPage window = new MasterPage();
+					Master window = new Master();
 					initialize();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
