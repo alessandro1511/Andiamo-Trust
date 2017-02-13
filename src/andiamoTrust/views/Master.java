@@ -62,6 +62,7 @@ public class Master extends JFrame {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
+		frame.setUndecorated(true);
 		
 		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(500, 270, Image.SCALE_SMOOTH));
 		JPanel pnlImage = new JPanel();
