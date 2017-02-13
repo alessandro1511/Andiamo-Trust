@@ -15,17 +15,31 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class Main extends Master {
+import org.apache.logging.log4j.LogManager;
+
+public class Main extends MasterPage {
 
 	private static final long serialVersionUID = -5136872760546330710L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	
+	/**
+	 * Create the application.
+	 */
 	public Main() {
-		getContentPane().setBackground(new Color(21, 58, 76));
+		logger = LogManager.getLogger(this.getClass());
+		initialize();
+	}
+	
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	public void initialize() {
 		getLogger().info("initialization main");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.png"));
+		
+		getContentPane().setBackground(new Color(21, 58, 76));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct_ico.png"));
 		setBackground(new Color(42, 129, 172));
 		setFont(new Font("Calibri", Font.PLAIN, 20));
 		setVisible(true);
