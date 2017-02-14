@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 import org.apache.logging.log4j.LogManager;
 
-public class Master extends LauncherViews {
+public class Master extends Launcher {
 	
 	private static final long serialVersionUID = 6742096473341635479L;
 	public static JFrame frame;

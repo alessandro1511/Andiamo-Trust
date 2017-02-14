@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import andiamoTrust.dao.dto.UserDTO;
 
-public class LauncherViews extends JFrame {
+public class Launcher extends JFrame {
 
 	private static final long serialVersionUID = 6742096473341635479L;
 	protected static Logger logger;
@@ -16,9 +16,11 @@ public class LauncherViews extends JFrame {
 	private static Master window;
 
 	public static void main(String[] args) throws Exception {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					sessionUser = new UserDTO();
 					window = new Master();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -28,7 +30,7 @@ public class LauncherViews extends JFrame {
 		
 		Thread.sleep(3000);
 		window.frame.dispose();
-		Login frameLogin = new Login();
+		Main frameLogin = new Main();
 	}
 	
 	public static Logger getLogger(){
