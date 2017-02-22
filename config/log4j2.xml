@@ -5,9 +5,9 @@
     	<Console name="Console" target="SYSTEM_OUT">
         	<PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} Level: %-5level Class: %logger{36} Message: %msg%n" />
         </Console>
-        <File name="LogFile" fileName="logAndiamoTrust.log" immediateFlush="true" append="false">
-        	<PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} Level: %-5level Class: %logger{36} Message: %msg%n"/>
-        </File>
+        <!-- <File name="LogFile" fileName="logAndiamoTrust.log" immediateFlush="true" append="false"> -->
+        <!-- 	<PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} Level: %-5level Class: %logger{36} Message: %msg%n"/> -->
+        <!-- </File> -->
 	</Appenders>
     <Loggers>
     	<Root level="info">
