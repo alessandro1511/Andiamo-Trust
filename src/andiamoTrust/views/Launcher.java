@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.Logger;
 
@@ -31,11 +32,18 @@ public class Launcher extends JFrame {
 			}
 		});
 		
-		UserDAO userDAO = new UserDAO(MyBatisConnectionFactory.getSqlSessionFactory());
-		List<UserDTO> testUser = userDAO.selectAll();
-		Thread.sleep(5000);
-		window.frame.dispose();
-		Main frameLogin = new Main();
+		try{	
+			UserDAO userDAO = new UserDAO(MyBatisConnectionFactory.getSqlSessionFactory());
+			List<UserDTO> testUser = userDAO.selectAll();
+			Thread.sleep(5000);
+			window.frame.dispose();
+			Main frameLogin = new Main();
+		}
+		catch (Exception e)
+		{
+			window.frame.dispose();
+			JOptionPane.showMessageDialog(null, "Server Connection Error", "Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
 	public static Logger getLogger(){
