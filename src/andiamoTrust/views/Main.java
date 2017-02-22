@@ -25,7 +25,6 @@ import org.apache.logging.log4j.LogManager;
 import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
-import javax.swing.JTextPane;
 
 public class Main extends Launcher {
 
@@ -222,13 +221,13 @@ public class Main extends Launcher {
 					if (sessionUser != null)
 					{
 						getLogger().info("user connected");
-						lblUser.setText(sessionUser.getUsername());
+						lblUser.setText(sessionUser.getName() + " " + sessionUser.getSurname());
 						tabbedPnlMain.setEnabledAt(indexJournalEntry, true);
 						tabbedPnlMain.setEnabledAt(indexSettings, true);
-						if (StringUtils.isNotBlank(sessionUser.getSex()) && sessionUser.getSex().toUpperCase().equals("F"))
-							lblUserImg.setIcon(new ImageIcon("img/user_f_online.png"));
-						else
+						if (StringUtils.isNotBlank(sessionUser.getSex()) && sessionUser.getSex().toUpperCase().equals("M"))
 							lblUserImg.setIcon(new ImageIcon("img/user_m_online.png"));
+						else
+							lblUserImg.setIcon(new ImageIcon("img/user_f_online.png"));
 						pnlRetry.setVisible(false);
 						pnlLogin.setVisible(false);
 						pnlLoginUser.setVisible(true);

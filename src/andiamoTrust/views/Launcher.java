@@ -1,11 +1,14 @@
 package andiamoTrust.views;
 
 import java.awt.EventQueue;
+import java.util.List;
 
 import javax.swing.JFrame;
 
 import org.apache.logging.log4j.Logger;
 
+import andiamoTrust.dao.base.MyBatisConnectionFactory;
+import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
 
 public class Launcher extends JFrame {
@@ -28,7 +31,9 @@ public class Launcher extends JFrame {
 			}
 		});
 		
-		Thread.sleep(3000);
+		UserDAO userDAO = new UserDAO(MyBatisConnectionFactory.getSqlSessionFactory());
+		List<UserDTO> testUser = userDAO.selectAll();
+		Thread.sleep(5000);
 		window.frame.dispose();
 		Main frameLogin = new Main();
 	}

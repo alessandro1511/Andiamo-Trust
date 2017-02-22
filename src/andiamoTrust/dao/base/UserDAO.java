@@ -15,22 +15,22 @@ public class UserDAO {
     public UserDAO(SqlSessionFactory sqlSessionFactory){
         this.sqlSessionFactory = sqlSessionFactory;
     }
- 
-    /**
-     * Returns the list of all Person instances from the database.
-     * @return the list of all Person instances from the database.
-     */
-
-    public  List<UserDTO> selectAll(){
-        List<UserDTO> list = null;
-        SqlSession session = sqlSessionFactory.openSession();
- 
-        try {
-            list = session.selectList("Person.selectAll");
-        } finally {
-            session.close();
-        }
-        return list;
+     
+    public List<UserDTO> selectAll() throws Exception{
+    	List<UserDTO> list = null;
+		SqlSession session = sqlSessionFactory.openSession();
+		try {
+			UserDAOInterface mapper = session.getMapper(UserDAOInterface.class);
+			list = mapper.selectAll();
+		} 
+		catch(Exception e)
+		{	
+			throw new Exception(e);
+		}
+		finally {
+			session.close();
+		}
+		return list;
     }
     
     public UserDTO selectByKeys(UserDTO input) throws Exception{

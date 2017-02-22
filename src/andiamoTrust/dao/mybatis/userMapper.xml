@@ -7,7 +7,10 @@
  
     <resultMap id="result" type="UserDTO">
         <result property="username" column="username"/>
-        <result property="password" column="password"/>   
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="surname" column="surname"/>
+        <result property="sex" column="sex"/>
     </resultMap>
  
     <select id="selectAll" resultMap="result">
