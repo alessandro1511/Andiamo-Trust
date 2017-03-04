@@ -32,6 +32,7 @@ public class Master extends Launcher {
 		getLogger().info("initialization master");
 		
 		frame = new JFrame();
+		frame.setVisible(false);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct_ico.png"));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(0, 0, 600, 400);
@@ -40,7 +41,6 @@ public class Master extends Launcher {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setUndecorated(true);
-		frame.setVisible(true);
 		
 		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/ayct.png").getImage().getScaledInstance(600, 400, Image.SCALE_SMOOTH));
 		JPanel pnlImage = new JPanel();
@@ -51,6 +51,7 @@ public class Master extends Launcher {
 		pnlImage.add(lblImage);
 		frame.getContentPane().add(pnlImage, BorderLayout.CENTER);
 		
+		frame.setVisible(true);
 		getLogger().info("initialization master complete");
 	}
 }

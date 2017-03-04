@@ -2,6 +2,7 @@ package andiamoTrust.views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -29,11 +30,7 @@ import andiamoTrust.dao.dto.UserDTO;
 public class Main extends Launcher {
 
 	private static final long serialVersionUID = -5136872760546330710L;
-	private JTextField txtFieldUsername;
-	private JPasswordField pwdFieldPassword;
-	private int indexWelcome;
-	private int indexJournalEntry;
-	private int indexSettings;
+	private JFrame frame;
 	
 	/**
 	 * Create the application.
@@ -49,21 +46,22 @@ public class Main extends Launcher {
 	public void initialize() {
 		getLogger().info("initialization main");
 		
-		getContentPane().setBackground(new Color(21, 58, 76));
-		setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct_ico.png"));
-		setBackground(new Color(42, 129, 172));
-		setFont(new Font("Calibri", Font.PLAIN, 20));
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1000, 800);
-		setLocationRelativeTo(null);
-		setResizable(true);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame = new JFrame();
+		frame.setVisible(false);
+		frame.getContentPane().setBackground(new Color(21, 58, 76));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("img/ayct.png"));
+		frame.setBackground(new Color(42, 129, 172));
+		frame.setFont(new Font("Calibri", Font.PLAIN, 20));
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(0, 0, 1000, 800);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(true);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		JPanel pnlInfo = new JPanel();
 		pnlInfo.setBackground(new Color(21, 58, 76));
-		getContentPane().add(pnlInfo, BorderLayout.NORTH);
 		pnlInfo.setLayout(new BorderLayout(0, 0));
+		frame.getContentPane().add(pnlInfo, BorderLayout.NORTH);
 		
 		JLabel lblLogo = new JLabel("Andiamo Youth Coperative Trust");
 		lblLogo.setVerticalAlignment(SwingConstants.CENTER);
@@ -88,17 +86,61 @@ public class Main extends Launcher {
 		JTabbedPane tabbedPnlMain = new JTabbedPane(JTabbedPane.LEFT);
 		tabbedPnlMain.setFont(new Font("Calibri", Font.PLAIN, 20));
 		tabbedPnlMain.setBackground(new Color(21, 58, 76));
-		tabbedPnlMain.setForeground(Color.WHITE);
+		tabbedPnlMain.setForeground(Color.BLACK);
 		tabbedPnlMain.setBorder(new EmptyBorder(0, 0, 0, 0));
-		getContentPane().add(tabbedPnlMain, BorderLayout.CENTER);
-		
 		JPanel pnlWelcome = new JPanel();
 		pnlWelcome.setBorder(new EmptyBorder(0, 0, 0, 0));
 		pnlWelcome.setBackground(new Color(42, 129, 172));
-		tabbedPnlMain.addTab("Welcome", null, pnlWelcome, null);
-	    indexWelcome = tabbedPnlMain.getTabCount() - 1;
-	    tabbedPnlMain.setEnabledAt(indexWelcome, true);
-			
+		tabbedPnlMain.addTab("Welcome", pnlWelcome);
+		JLabel labelWelcome = new JLabel("Welcome");
+		labelWelcome.setForeground(Color.WHITE);
+		labelWelcome.setMinimumSize(new Dimension(200, 50));
+		labelWelcome.setPreferredSize(new Dimension(200, 50));
+		labelWelcome.setMaximumSize(new Dimension(200, 50));
+		labelWelcome.setFont(new Font("Calibri", Font.PLAIN, 20));
+		labelWelcome.setIconTextGap(25);
+		labelWelcome.setIcon(new ImageIcon("img/ayct_ico.png"));
+		labelWelcome.setHorizontalTextPosition(SwingConstants.RIGHT);
+		labelWelcome.setEnabled(true);
+		tabbedPnlMain.setTabComponentAt(0, labelWelcome);
+		int indexWelcome = tabbedPnlMain.getTabCount() - 1;
+		tabbedPnlMain.setEnabledAt(indexWelcome, true);
+		JPanel pnlJournalEntry = new JPanel();
+		pnlJournalEntry.setBackground(new Color(42, 129, 172));
+		pnlJournalEntry.setLayout(null);
+		tabbedPnlMain.addTab("Journal Entry", pnlJournalEntry);
+		JLabel labelJournalEntry = new JLabel("Journal Entry");
+		labelJournalEntry.setForeground(Color.WHITE);
+		labelJournalEntry.setMinimumSize(new Dimension(200, 50));
+		labelJournalEntry.setPreferredSize(new Dimension(200, 50));
+		labelJournalEntry.setMaximumSize(new Dimension(200, 50));
+		labelJournalEntry.setFont(new Font("Calibri", Font.PLAIN, 20));
+		labelJournalEntry.setIconTextGap(25);
+		labelJournalEntry.setIcon(new ImageIcon("img/profiles.png"));
+		labelJournalEntry.setHorizontalTextPosition(SwingConstants.RIGHT);
+		labelJournalEntry.setEnabled(false);
+		tabbedPnlMain.setTabComponentAt(1, labelJournalEntry);
+		int indexJournalEntry = tabbedPnlMain.getTabCount() - 1;
+		tabbedPnlMain.setEnabledAt(indexJournalEntry, false);
+		JPanel pnlSettings = new JPanel();
+		pnlSettings.setBackground(new Color(42, 129, 172));
+		pnlSettings.setLayout(null);
+		tabbedPnlMain.addTab("Settings", pnlSettings);
+		JLabel labelSettings = new JLabel("Settings");
+		labelSettings.setForeground(Color.WHITE);
+		labelSettings.setMinimumSize(new Dimension(200, 50));
+		labelSettings.setPreferredSize(new Dimension(200, 50));
+		labelSettings.setMaximumSize(new Dimension(200, 50));
+		labelSettings.setFont(new Font("Calibri", Font.PLAIN, 20));
+		labelSettings.setIconTextGap(25);
+		labelSettings.setIcon(new ImageIcon("img/settings.png"));
+		labelSettings.setHorizontalTextPosition(SwingConstants.RIGHT);
+		labelSettings.setEnabled(false);
+		tabbedPnlMain.setTabComponentAt(2, labelSettings);
+		int indexSettings = tabbedPnlMain.getTabCount() - 1;
+		tabbedPnlMain.setEnabledAt(indexSettings, false);
+		frame.getContentPane().add(tabbedPnlMain, BorderLayout.CENTER);
+		
 		ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/hands.png").getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH));
 		pnlWelcome.setLayout(null);
 		
@@ -120,7 +162,7 @@ public class Main extends Launcher {
 		pnlLogin.add(lblUsername);
 		lblUsername.setFont(new Font("Calibri", Font.BOLD, 20));
 		
-		txtFieldUsername = new JTextField();
+		JTextField txtFieldUsername = new JTextField();
 		txtFieldUsername.setBounds(15, 42, 421, 32);
 		pnlLogin.add(txtFieldUsername);
 		txtFieldUsername.setFont(new Font("Calibri", Font.PLAIN, 20));
@@ -131,7 +173,7 @@ public class Main extends Launcher {
 		pnlLogin.add(lblPassword);
 		lblPassword.setFont(new Font("Calibri", Font.BOLD, 20));
 		
-		pwdFieldPassword = new JPasswordField();
+		JPasswordField pwdFieldPassword = new JPasswordField();
 		pwdFieldPassword.setBounds(15, 143, 421, 35);
 		pnlLogin.add(pwdFieldPassword);
 		pwdFieldPassword.setFont(new Font("Calibri", Font.PLAIN, 20));
@@ -189,22 +231,8 @@ public class Main extends Launcher {
 		JLabel lblHands = new JLabel("", imageIcon, JLabel.CENTER);
 		pnlHands.add(lblHands);
 		
-		JPanel pnlJournalEntry = new JPanel();
-		pnlJournalEntry.setBackground(new Color(42, 129, 172));
-		pnlJournalEntry.setLayout(null);
-		tabbedPnlMain.addTab("Journal Entry", null, pnlJournalEntry, null);
-		indexJournalEntry = tabbedPnlMain.getTabCount() - 1;
-		tabbedPnlMain.setEnabledAt(indexJournalEntry, false);
-		
-		JPanel pnlSettings = new JPanel();
-		pnlSettings.setBackground(new Color(42, 129, 172));
-		pnlSettings.setLayout(null);
-		tabbedPnlMain.addTab("Settings", null, pnlSettings, null);
-		indexSettings = tabbedPnlMain.getTabCount() - 1;
-		tabbedPnlMain.setEnabledAt(indexSettings, false);
-		
 		JPanel pnlExtra = new JPanel();
-		getContentPane().add(pnlExtra, BorderLayout.SOUTH);
+		frame.getContentPane().add(pnlExtra, BorderLayout.SOUTH);
 		
 		JLabel lblExtra = new JLabel(" ");
 		pnlExtra.add(lblExtra);
@@ -223,7 +251,9 @@ public class Main extends Launcher {
 						getLogger().info("user connected");
 						lblUser.setText(sessionUser.getName() + " " + sessionUser.getSurname());
 						tabbedPnlMain.setEnabledAt(indexJournalEntry, true);
+						labelJournalEntry.setEnabled(true);
 						tabbedPnlMain.setEnabledAt(indexSettings, true);
+						labelSettings.setEnabled(true);
 						if (StringUtils.isNotBlank(sessionUser.getSex()) && sessionUser.getSex().toUpperCase().equals("M"))
 							lblUserImg.setIcon(new ImageIcon("img/user_m_online.png"));
 						else
@@ -236,7 +266,9 @@ public class Main extends Launcher {
 					{
 						getLogger().info("user didn't find");
 						tabbedPnlMain.setEnabledAt(indexJournalEntry, false);
+						labelJournalEntry.setEnabled(false);
 						tabbedPnlMain.setEnabledAt(indexSettings, false);
+						labelSettings.setEnabled(false);
 						pnlLogin.setVisible(true);
 						pnlRetry.setVisible(true);
 						pnlLoginUser.setVisible(false);
@@ -254,7 +286,9 @@ public class Main extends Launcher {
 					getLogger().info("user disconnected");
 					sessionUser = new UserDTO();
 					tabbedPnlMain.setEnabledAt(indexJournalEntry, false);
+					labelJournalEntry.setEnabled(false);
 					tabbedPnlMain.setEnabledAt(indexSettings, false);
+					labelSettings.setEnabled(false);
 					lblUserImg.setIcon(new ImageIcon("img/user_offline.png"));
 					lblUser.setText("");
 					txtFieldUsername.setText("");
@@ -268,6 +302,7 @@ public class Main extends Launcher {
 			}
 		});
 		
+		frame.setVisible(true);
 		getLogger().info("initialization main complete");
 	}
 }
