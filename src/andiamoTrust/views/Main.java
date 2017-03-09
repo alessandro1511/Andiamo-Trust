@@ -64,6 +64,7 @@ public class Main extends Launcher {
 		frame.getContentPane().add(pnlInfo, BorderLayout.NORTH);
 		
 		JLabel lblLogo = new JLabel("Andiamo Youth Coperative Trust");
+		lblLogo.setBorder(new EmptyBorder(0, 20, 0, 0));
 		lblLogo.setVerticalAlignment(SwingConstants.CENTER);
 		lblLogo.setForeground(new Color(38, 189, 238));
 		lblLogo.setFont(new Font("Calibri", Font.PLAIN, 30));
