@@ -13,9 +13,9 @@
           <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/andiamotrust?useSSL=false"/>
+                <property name="url" value="jdbc:mysql://192.168.56.101:3306/andiamotrust?useSSL=false"/>
                 <property name="username" value="root"/>
-                <property name="password" value="password"/>
+                <property name="password" value="andiamotrust"/>
             </dataSource>
        </environment>
     </environments>
