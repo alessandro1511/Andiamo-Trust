@@ -17,7 +17,7 @@ public class Launcher extends JFrame {
 	private static final long serialVersionUID = 6742096473341635479L;
 	protected static Logger logger;
 	public static UserDTO sessionUser;
-	private static Master window;
+	private static Loader window;
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -25,7 +25,7 @@ public class Launcher extends JFrame {
 			public void run() {
 				try {
 					sessionUser = new UserDTO();
-					window = new Master();
+					window = new Loader();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,7 +37,7 @@ public class Launcher extends JFrame {
 			userDAO.selectAll();
 			Thread.sleep(5000);
 			window.frame.dispose();
-			new Main();
+			new Program();
 		}
 		catch (Exception e)
 		{

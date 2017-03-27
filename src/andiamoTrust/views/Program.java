@@ -27,7 +27,7 @@ import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
 
-public class Main extends Launcher {
+public class Program extends Launcher {
 
 	private static final long serialVersionUID = -5136872760546330710L;
 	private JFrame frame;
@@ -35,7 +35,7 @@ public class Main extends Launcher {
 	/**
 	 * Create the application.
 	 */
-	public Main() {
+	public Program() {
 		logger = LogManager.getLogger(this.getClass());
 		initialize();
 	}

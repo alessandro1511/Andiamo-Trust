@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 import org.apache.logging.log4j.LogManager;
 
-public class Master extends Launcher {
+public class Loader extends Launcher {
 	
 	private static final long serialVersionUID = 6742096473341635479L;
 	public static JFrame frame;
@@ -20,7 +20,7 @@ public class Master extends Launcher {
 	/**
 	 * Create the application.
 	 */
-	public Master() throws Exception {
+	public Loader() throws Exception {
 		logger = LogManager.getLogger(this.getClass());
 		initialize();
 	}
