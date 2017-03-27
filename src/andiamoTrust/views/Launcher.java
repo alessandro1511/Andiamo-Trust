@@ -1,7 +1,6 @@
 package andiamoTrust.views;
 
 import java.awt.EventQueue;
-import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -12,13 +11,14 @@ import andiamoTrust.dao.base.MyBatisConnectionFactory;
 import andiamoTrust.dao.base.UserDAO;
 import andiamoTrust.dao.dto.UserDTO;
 
+@SuppressWarnings({ "static-access" })
 public class Launcher extends JFrame {
 
 	private static final long serialVersionUID = 6742096473341635479L;
 	protected static Logger logger;
 	public static UserDTO sessionUser;
 	private static Master window;
-
+	
 	public static void main(String[] args) throws Exception {
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -34,10 +34,10 @@ public class Launcher extends JFrame {
 		
 		try{	
 			UserDAO userDAO = new UserDAO(MyBatisConnectionFactory.getSqlSessionFactory());
-			List<UserDTO> testUser = userDAO.selectAll();
+			userDAO.selectAll();
 			Thread.sleep(5000);
 			window.frame.dispose();
-			Main frameLogin = new Main();
+			new Main();
 		}
 		catch (Exception e)
 		{

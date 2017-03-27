@@ -71,11 +71,10 @@ public class UserDAO {
    * @param person the instance to be persisted.
    */
     public void update(UserDTO person){
-       int id = -1;
       SqlSession session = sqlSessionFactory.openSession();
  
       try {
-          id = session.update("Person.update", person);
+          session.update("Person.update", person);
  
       } finally {
           session.commit();

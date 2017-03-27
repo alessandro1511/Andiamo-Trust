@@ -240,6 +240,7 @@ public class Main extends Launcher {
 		
 		//Button actions
 		btnLogin.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					UserDAO userDAO = new UserDAO(MyBatisConnectionFactory.getSqlSessionFactory());
